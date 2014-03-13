@@ -1,0 +1,87 @@
+<!-- this is sample. only sample. -->
+
+<!DOCTYPE html> <!-- html部分のコメントはこのように記入 -->
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Servo Motor</title> <!-- タイトルを入力 -->
+    <style type="text/css"> /* css部分のコメントは {} */
+    body {
+        background-color: black;
+        color: #f0f0f0;
+    }
+    h1 {
+        text-decoration: underline;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    #settings {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+    #btn {
+        width: 200px;
+        height: 100px;
+        border-radius: 10px;
+        font-size: 36px;
+        margin: 100px auto 0px auto;
+        display: block;
+    }
+    #site-box{
+        width: 700px;
+        margin: 5px auto;
+    }
+    #a-box{
+        float: left;
+        width: 350px;
+    }
+    #b-box{
+        float: right;
+        width: 350px;
+    }
+    #main{
+    position:absolute;
+    top:60px;
+    font-size:small;
+    text-align:center;
+    width:100%;
+    }
+    .a {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    </style>
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+
+<body> <!-- body部分には文字や画像を挿入することができる 実質的なメインコンテンツ -->
+
+<div id="site-box">
+<h1>Arduino × Servo motor</h1>
+<br><br><br>
+<div id="a-box">
+<p>
+<img src="pic01.gif" class="a" alt="change the angle" title="change the angle" >
+<br>
+<input id="servo" class ="a" type="button" value="change the angle">
+</p>
+</div>
+
+<div id="b-box">
+<p>
+<img src="pic02.gif" class="a" alt="change the angle" title="change the angle" >
+<br>
+<input id="servo2" class="a" type="button" value="a temporary lull">
+</div>
+</p>
+</div>
+<!--<div id="label1"></div>-->
+
+</body>
+</html>
