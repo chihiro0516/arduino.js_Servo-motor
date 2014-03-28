@@ -2,13 +2,10 @@
 
         var PIN = 8;
         var arduino = null;
+        var D_Port = "COM5";
 
-        $(document).ready(function() {
-            arduino = document.arduino;
-            arduino.open("COM4");
-            arduino.pinMode(PIN, true);
+        function Servo() {
             $("#servo").click(function() {
-                //var value = Math.floor(Math.random()*2000);
                 //pulse
                 var ontime = 2000;
                 var offtime = 20000 - ontime;
@@ -22,8 +19,31 @@
             });
             $("#servo3").click(function() {
                 //pulse
-                var ontime = 2300;
+                var ontime = 2600;
                 var offtime = 20000 - ontime;
                 arduino.pulse(PIN, ontime, offtime);
             });
-        });
+        }
+
+
+        function setup() {
+            if(document.arduino) {
+                arduino = document.arduino;
+                try{
+                    arduino.open(D_Port);
+                    arduino.pinMode(0,true);
+                    Servo();
+                } catch(e) {
+                    alert("Connection failed");
+                }
+            }
+        }
+
+$(function () {
+    setup();
+});
+
+function changeDevicePort(){
+    D_Port = $('#devPort').val();
+    setup();
+}
